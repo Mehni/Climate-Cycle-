@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+  <GameConditionDef>
+    <defName>ClimateCycle_Plus</defName>
+    <conditionClass>ClimateCyclePlusPlus.GameCondition_ClimateCyclePlusPlus</conditionClass>
+    <label>climate cycle+</label>
+    <description>Run-away climate cycle due to a wonky and elliptical orbit.</description>
+    <canBePermanent>true</canBePermanent>
+  </GameConditionDef>
+  
+</Defs>  

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Climate Cycle++</name>
+	<author>Mehni</author>
+	<targetVersion>0.18.0</targetVersion>
+	<url>https://ludeon.com/forums/index.php?topic=35832</url>
+	<description>A run away climate cycle, seeking EXTREEEEEME weather.
+
+version 0.18.0.2
+
+&lt;size=20&gt;How to use&lt;/size&gt;
+
+Step 1. Install mod.
+Step 2. Activate in the scenario editor before starting a new colony.
+
+&lt;size=20&gt;Credits and thanks:&lt;/size&gt;
+
+- ShotgunFrenzy and ramyb for the preview image.
+- Why_is_that for the SettingsHelper
+- www.twitch.tv/Spartyon7 for testing.
+- Dan, for rubber ducking :)
+	
+	</description>
+</ModMetaData>

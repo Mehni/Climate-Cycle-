@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LanguageData>
+	<CCPP_CycleTypeChoice>Select the type of climate cycle. Default, increasingly colder, or increasingly hotter</CCPP_CycleTypeChoice>
+	<CCPP_Multiplier>Multiplier on temperature rise. Higher = extremer temp.</CCPP_Multiplier>
+	<CCPP_Periods>Years for a full hot -> cold -> hot cycle. Default is 4.</CCPP_Periods>
+	
+	<AlertHeatstroke>Heatstroke</AlertHeatstroke>
+	<AlertHeatstrokeDesc>These colonists are suffering from heatstroke.\n\n{0}\nMake sure their clothing is appropriate for the season and that indoor spaces are properly cooled.</AlertHeatstrokeDesc>
+</LanguageData>
