@@ -2,11 +2,11 @@
 
 A run away climate cycle, seeking EXTREEEEEME weather.
 
-version 0.18.0.2
+version 0.18.0.3
 
 How to use
 
-Step 1. Install mod.
+Step 1. Install mod.  
 Step 2. Activate in the scenario editor before starting a new colony.
 
 Credits and thanks:
