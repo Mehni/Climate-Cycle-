@@ -23,6 +23,7 @@ namespace ClimateCyclePlusPlus
             base.ExposeData();
             Scribe_Values.Look(ref this.cyclePeriods, "cyclePeriods", 4f);
             Scribe_Values.Look(ref this.cycleMultiplier, "cycleMultiplier", 5f);
+            Scribe_Values.Look(ref this.cycleType, "cycleType", "Regular Cycle");
         }
     }
 
