@@ -2,7 +2,7 @@
 
 A run away climate cycle, seeking EXTREEEEEME weather.
 
-version 0.18.0.3
+version 0.18.0.4
 
 How to use
 
@@ -15,6 +15,8 @@ Credits and thanks:
 - Why_is_that for the SettingsHelper.
 - www.twitch.tv/Spartyon7 for testing.
 - Dan, for rubber ducking :)
+
+The base game has a Climate Cycle scenario you can add, which has a slow temperature rise until you hit +20C from average temperature, then begins dropping until you hit -20C, then back up again.  The cycle takes 4 years to get back to the beginning. Climate Cycle ++ increases the temperature offset over time and allows you to set the length of the cycle. At first the temperature becomes more extreme, then downright inhospitable.
 
 Not savegame compatible.
 
