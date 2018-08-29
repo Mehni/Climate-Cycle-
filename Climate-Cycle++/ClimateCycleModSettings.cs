@@ -5,7 +5,6 @@ using System.Text;
 using RimWorld;
 using UnityEngine;
 using Verse;
-using SettingsHelper;
 
 namespace ClimateCyclePlusPlus
 {
@@ -16,6 +15,10 @@ namespace ClimateCyclePlusPlus
 
         public float cyclePeriods = 4f;
         public float cycleMultiplier = 5f;
+
+        //public bool fuckMyShitUp = false;
+        //public bool reallyFuckItUp = false;
+        //not today.
         
 
         public override void ExposeData()
@@ -31,7 +34,7 @@ namespace ClimateCyclePlusPlus
     {
         CycleSettings settings;
 
-        public static string[] cycleTypes = { "Regular Cycle", "Winter is coming", "Waiting for the Sun"};
+        public static string[] cycleTypes = { "Regular Cycle", "Winter is coming", "Waiting for the Sun", "Normal Summer, Cold Winter"};
 
 
         public ClimateCycle(ModContentPack content) : base(content)
@@ -49,7 +52,7 @@ namespace ClimateCyclePlusPlus
             //listing_Standard.AddLabeledCheckbox("CCPP_ColdNightHotDays".Translate(), ref settings.showWeather);
             //listing_Standard.AddHorizontalLine(3f);
             listing_Standard.AddLabeledRadioList($"{"CCPP_CycleTypeChoice".Translate()}:", cycleTypes, ref settings.cycleType);
-            listing_Standard.AddHorizontalLine(3f);
+            listing_Standard.GapLine(3f);
             listing_Standard.AddLabeledNumericalTextField<float>("CCPP_Multiplier".Translate(), ref settings.cycleMultiplier, minValue: 1f, maxValue: 20f);
             listing_Standard.AddLabeledNumericalTextField<float>("CCPP_Periods".Translate(), ref settings.cyclePeriods, minValue: 1f, maxValue: 8f);
             listing_Standard.End();

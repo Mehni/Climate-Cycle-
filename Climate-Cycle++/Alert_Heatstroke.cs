@@ -38,7 +38,7 @@ namespace ClimateCyclePlusPlus
             StringBuilder stringBuilder = new StringBuilder();
             foreach (Pawn current in this.HeatstrokeDangerColonists)
             {
-                stringBuilder.AppendLine("    " + current.NameStringShort);
+                stringBuilder.AppendLine("    " + current.LabelShort);
             }
             return "AlertHeatstrokeDesc".Translate(new object[]
             {
@@ -48,12 +48,7 @@ namespace ClimateCyclePlusPlus
 
         public override AlertReport GetReport()
         {
-            Pawn pawn = this.HeatstrokeDangerColonists.FirstOrDefault<Pawn>();
-            if (pawn == null)
-            {
-                return false;
-            }
-            return AlertReport.CulpritIs(pawn);
+            return AlertReport.CulpritsAre(this.HeatstrokeDangerColonists);
         }
     }
 }
