@@ -19,7 +19,6 @@ namespace ClimateCyclePlusPlus
         //public bool fuckMyShitUp = false;
         //public bool reallyFuckItUp = false;
         //not today.
-        
 
         public override void ExposeData()
         {

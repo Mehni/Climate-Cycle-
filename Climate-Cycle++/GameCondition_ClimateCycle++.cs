@@ -15,7 +15,7 @@ namespace ClimateCyclePlusPlus
 
         public override void Init()
         {
-            this.ticksOffset = ((Rand.Value >= 0.5f) ? (int)(settings.cyclePeriods) / 2 : 0);
+            this.ticksOffset = (Rand.Value >= 0.5f) ? (int)settings.cyclePeriods / 2 : 0;
         }
 
         public override void ExposeData()
@@ -24,26 +24,27 @@ namespace ClimateCyclePlusPlus
             Scribe_Values.Look<int>(ref this.ticksOffset, "ticksOffset", 0, false);
         }
 
+        //one day this'll be convoluted enough for me to need comments.
         public override float TemperatureOffset()
         {
             if (settings.cycleType == "Winter is coming")
-                return Mathf.Sin(GenDate.YearsPassedFloat / settings.cyclePeriods * Mathf.PI * 2f) * 20f - (GenDate.YearsPassedFloat * settings.cycleMultiplier) - 20f;
+                return Mathf.Sin((GenDate.YearsPassedFloat + this.ticksOffset) / settings.cyclePeriods * Mathf.PI * 2f) * 20f - (GenDate.YearsPassedFloat * settings.cycleMultiplier) - 20f;
 
             if (settings.cycleType == "Waiting for the Sun")
-                return Mathf.Sin(GenDate.YearsPassedFloat / settings.cyclePeriods* Mathf.PI * 2f) * 20f + (GenDate.YearsPassedFloat * settings.cycleMultiplier);
+                return Mathf.Sin((GenDate.YearsPassedFloat + this.ticksOffset) / settings.cyclePeriods * Mathf.PI * 2f) * 20f + (GenDate.YearsPassedFloat * settings.cycleMultiplier);
 
             if (settings.cycleType == "Normal Summer, Cold Winter")
             {
-                if (GenDate.Season((long)Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(this.SingleMap.Tile)) == Season.Fall)
-                    return Mathf.Sin(GenDate.YearsPassedFloat / settings.cyclePeriods * Mathf.PI * 2f) * 20f - ((GenDate.YearsPassedFloat * settings.cycleMultiplier) / 2) - 20f;
+                if (GenDate.Season(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(this.SingleMap.Tile)) == Season.Fall)
+                    return Mathf.Sin((GenDate.YearsPassedFloat + this.ticksOffset) / settings.cyclePeriods * Mathf.PI * 2f) * 20f - (GenDate.YearsPassedFloat * settings.cycleMultiplier / 2) - 20f;
 
-                if (GenDate.Season((long)Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(this.SingleMap.Tile)) == Season.Winter)
-                    return Mathf.Sin(GenDate.YearsPassedFloat / settings.cyclePeriods * Mathf.PI * 2f) * 20f - (GenDate.YearsPassedFloat * settings.cycleMultiplier) - (GenDate.YearsPassedFloat * settings.cycleMultiplier) - 20f;
+                if (GenDate.Season(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(this.SingleMap.Tile)) == Season.Winter)
+                    return Mathf.Sin((GenDate.YearsPassedFloat + this.ticksOffset) / settings.cyclePeriods * Mathf.PI * 2f) * 20f - (GenDate.YearsPassedFloat * settings.cycleMultiplier) - (GenDate.YearsPassedFloat * settings.cycleMultiplier) - 20f;
 
                 return 0f;
             }
 
-            return Mathf.Sin(GenDate.YearsPassedFloat / settings.cyclePeriods * Mathf.PI * 2f) * (20f + (GenDate.YearsPassedFloat * settings.cycleMultiplier));
+            return Mathf.Sin((GenDate.YearsPassedFloat + this.ticksOffset) / settings.cyclePeriods * Mathf.PI * 2f) * (20f + (GenDate.YearsPassedFloat * settings.cycleMultiplier));
         }
     }
 }

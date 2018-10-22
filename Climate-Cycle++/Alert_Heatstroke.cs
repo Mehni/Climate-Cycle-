@@ -40,10 +40,7 @@ namespace ClimateCyclePlusPlus
             {
                 stringBuilder.AppendLine("    " + current.LabelShort);
             }
-            return "AlertHeatstrokeDesc".Translate(new object[]
-            {
-                stringBuilder.ToString()
-            });
+            return "AlertHeatstrokeDesc".Translate(stringBuilder.ToString());
         }
 
         public override AlertReport GetReport()
