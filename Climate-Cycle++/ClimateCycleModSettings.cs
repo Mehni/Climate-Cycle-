@@ -35,7 +35,6 @@ namespace ClimateCyclePlusPlus
 
         public static string[] cycleTypes = { "Regular Cycle", "Winter is coming", "Waiting for the Sun", "Normal Summer, Cold Winter"};
 
-
         public ClimateCycle(ModContentPack content) : base(content)
         {
             this.settings = GetSettings<CycleSettings>();

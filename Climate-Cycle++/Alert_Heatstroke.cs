@@ -28,10 +28,7 @@ namespace ClimateCyclePlusPlus
             }
         }
 
-        public Alert_Heatstroke()
-        {
-            this.defaultLabel = "AlertHeatstroke".Translate();
-        }
+        public Alert_Heatstroke() => this.defaultLabel = "AlertHeatstroke".Translate();
 
         public override string GetExplanation()
         {
@@ -43,9 +40,7 @@ namespace ClimateCyclePlusPlus
             return "AlertHeatstrokeDesc".Translate(stringBuilder.ToString());
         }
 
-        public override AlertReport GetReport()
-        {
-            return AlertReport.CulpritsAre(this.HeatstrokeDangerColonists);
-        }
+        public override AlertReport GetReport() => AlertReport.CulpritsAre(this.HeatstrokeDangerColonists);
+
     }
 }
